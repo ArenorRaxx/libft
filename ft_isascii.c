@@ -1,22 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 20:01:40 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/23 20:49:59 by mcorso           ###   ########.fr       */
+/*   Created: 2021/11/23 20:48:34 by mcorso            #+#    #+#             */
+/*   Updated: 2021/11/23 20:52:57 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int ft_isalpha(int c) {
-    unsigned char nb;
-
-    nb = (unsigned char)c;
-    if (nb >= '0' && nb <= '9')
+int ft_isascii(int c) {
+    if (c >= 0 && c <= 127)
         return (1);
     return (0);
 }
