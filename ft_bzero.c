@@ -6,12 +6,13 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 21:50:15 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/23 21:53:08 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:15:41 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n) {
-    return(ft_memset(&s, 0, n));
+void	ft_bzero(void *s, size_t n)
+{
+	return (ft_memset(&s, 0, n));
 }

@@ -6,12 +6,13 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:55:37 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/23 20:57:27 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/24 16:13:54 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c) {
-    if (c >= ' ' && c <='~')
-        return (1);
-    return (0);
+int	ft_isprint(int c)
+{
+	if (c >= ' ' && c <= '~')
+		return (1);
+	return (0);
 }
