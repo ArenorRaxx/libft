@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 18:54:18 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 19:05:14 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/24 21:13:15 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			break ;
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	return ((int)(str1[i] - str2[i]));
 }
