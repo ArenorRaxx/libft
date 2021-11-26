@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 21:22:03 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:17:50 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 18:51:28 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlen(const char *s)
 
 	nb = 0;
 	str = (const char *)s;
-	while (str++ != 0)
+	while (*str++ != 0)
 		nb++;
 	return (nb);
 }

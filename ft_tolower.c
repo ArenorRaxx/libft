@@ -6,13 +6,13 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:30:36 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:30:51 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 18:48:14 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_tolower(int c)
 {
 	unsigned char	chr;
 
