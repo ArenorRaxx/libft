@@ -6,13 +6,13 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:01:40 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:18:17 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 18:25:48 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+int	ft_isdigit(int c)
 {
 	unsigned char	nb;
 
