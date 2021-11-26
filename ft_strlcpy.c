@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 22:28:37 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:16:34 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 21:34:42 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	unsigned char	*str;
 	unsigned char	*dest;
-	unsigned int	i;
+	size_t			len;
 
-	i = 0;
+	len = ft_strlen(src);
 	str = (unsigned char *)src;
 	dest = (unsigned char *)dst;
-	while (i++ < dstsize)
-		*(dest + i - 1) = *(str + i - 1);
-	*(dest + i - 1) = '\0';
-	return (i);
+	if (dstsize)
+	{
+		while (dstsize-- > 1 && *str)
+			*dest++ = *str++;
+		*dest = '\0';
+	}
+	return (len);
 }

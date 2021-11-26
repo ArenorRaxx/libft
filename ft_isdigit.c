@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:01:40 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/26 18:25:48 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 19:30:17 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isdigit(int c)
 {
-	unsigned char	nb;
-
-	nb = (unsigned char)c;
-	if (nb >= '0' && nb <= '9')
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }

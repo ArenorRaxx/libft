@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:36:43 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:20:05 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 19:30:40 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_isalnum(int c)
 {
-	unsigned int	ta;
-	unsigned int	tb;
+	int	ta;
+	int	tb;
 
 	ta = ft_isalpha(c);
 	tb = ft_isdigit(c);

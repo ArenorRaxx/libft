@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 20:01:12 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:19:09 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 19:29:09 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-	unsigned char	al;
-
-	al = (unsigned char)c;
-	if ((al >= 'A' && al <= 'Z') || (al >= 'a' && al <= 'z'))
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);
 	return (0);
 }

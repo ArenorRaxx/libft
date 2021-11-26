@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 22:21:38 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:15:15 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 19:24:54 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,17 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	str = (unsigned char *)src;
 	dest = (unsigned char *)dst;
-	while (len-- > 0)
-		*(dest + len) = *(str + len);
+	if (dest < str)
+	{
+		while (len--)
+			*dest++ = *str++;
+	}
+	else if (dest > str)
+	{
+		str += len - 1;
+		dest += len - 1;
+		while (len--)
+			*dest-- = *str--;
+	}
 	return (dst);
 }

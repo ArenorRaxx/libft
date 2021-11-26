@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 22:02:59 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/24 16:14:29 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/26 18:59:29 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	str = (unsigned char *)src;
 	dest = (unsigned char *)dst;
-	while (n-- > 0)
+	while (n-- && (str || dest))
 		*(dest + n) = *(str + n);
 	return (dst);
 }
