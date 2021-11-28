@@ -1,5 +1,6 @@
 .vscode/launch.json
 .vscode/tasks.json
 libft.so
+a.out
 *.[oa]
 Makefile
