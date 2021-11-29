@@ -6,34 +6,36 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:50:31 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/27 15:44:32 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/29 15:39:17 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	char		*dest;
-	char		*str;
-	size_t		size;
-	size_t		dstlen;
+	size_t		i;
+	size_t		s;
+	size_t		d;
 
-	dest = dst;
-	str = (char *)src;
-	size = dstsize;
-	while (size-- != 0 && *dest != 0)
-		dest++;
-	dstlen = dest - dst;
-	size = dstsize - dstlen;
-	if (size == 0)
-		return (dstlen + ft_strlen(str));
-	while (*str != '\0')
+	d = ft_strlen(dst);
+	i = d;
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	if (dstsize < d)
+		return (dstsize + ft_strlen(src));
+	s = 0;
+	if (dstsize > i)
 	{
-		if (size-- != 1)
-			*dest++ = *str;
-		str++;
+		while (src[s] && dstsize - i > 1)
+		{
+			dst[i] = src[s];
+			i++;
+			s++;
+		}
 	}
-	*dest = '\0';
-	return (dstlen + (str - src));
+	dst[i] = '\0';
+	while (src[s] != '\0')
+		s++;
+	return (d + s);
 }

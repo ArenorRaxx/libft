@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/28 04:15:35 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/28 06:39:17 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/29 16:27:17 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_strtrim(const char *s1, const char *set)
 	while (*s1 && ft_strcontain(set, *s1))
 		s1++;
 	start = (char *)s1;
+	if (*start == 0)
+		return (start);
 	while (*s1)
 		s1++;
 	while (--s1 != start && ft_strcontain(set, *s1))
