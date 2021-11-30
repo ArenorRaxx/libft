@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:20:38 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/30 19:33:09 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/11/30 22:08:02 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
