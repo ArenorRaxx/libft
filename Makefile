@@ -6,7 +6,7 @@
 #    By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 17:34:58 by brhajji-          #+#    #+#              #
-#    Updated: 2021/11/30 22:36:23 by mcorso           ###   ########.fr        #
+#    Updated: 2021/11/30 23:28:28 by mcorso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,8 +45,14 @@ SRCS = ft_strlen.c\
 	   ft_putchar_fd.c\
 	   ft_putstr_fd.c\
 	   ft_putendl_fd.c\
-	   ft_putnbr_fd.c\
-BONUS = ft_lst_new.c\
+	   ft_putnbr_fd.c
+BONUS = ft_lstnew.c\
+		ft_lstadd_front.c\
+		ft_lstsize.c\
+		ft_lstlast.c\
+		ft_lstadd_last.c\
+		ft_lstdelone.c\
+		ft_lstclear.c\
 
 OBJS = ${SRCS:.c=.o}
 BONUSOBJ = ${BONUS:.c=.o}
@@ -59,7 +65,7 @@ RM = rm -f
 ${NAME}: ${OBJS}	
 	ar rc ${NAME} ${OBJS}
 all : ${NAME}
-bonus: ${OBJS} ${BONUSOBJ}
+bonus: ${BONUSOBJ} ${OBJS}
 	ar rc ${NAME} ${BONUSOBJ}
 clean :
 	${RM} ${OBJS}
