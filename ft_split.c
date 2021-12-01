@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 22:54:04 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/30 03:38:33 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/12/01 20:40:38 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,9 @@ static char	*word_calc(const char *str, int start, int finish)
 	int		i;
 
 	i = 0;
-	word = (char *)malloc((finish - start + 1) * sizeof(char));
+	word = (char *)ft_calloc(finish - start + 1, sizeof(char));
 	while (start < finish)
 		word[i++] = str[start++];
-	word[i] = '\0';
 	return (word);
 }
 
