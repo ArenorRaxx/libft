@@ -6,12 +6,11 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 04:47:15 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/30 17:37:38 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/12/01 20:36:41 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	how_many_digits(int n)
 {
@@ -62,12 +61,3 @@ char	*ft_itoa(int n)
 		int_ret[nbcar] = '-';
 	return (int_ret);
 }
-
-// int main()
-// {
-// 	char *a = ft_itoa(9);
-// 	char *b = ft_itoa(-9);
-// 	char *c = ft_itoa(8415);
-// 	char *d = ft_itoa(-8415);	
-// 	printf("%s, %s, %s, %s\n", a, b, c, d);
-// }
