@@ -6,11 +6,18 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 18:26:37 by mcorso            #+#    #+#             */
-/*   Updated: 2021/12/01 18:41:02 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/12/01 19:03:02 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static size_t	pretty_func(size_t slen, size_t len)
+{
+	if (slen < len)
+		return (slen + 1);
+	return (len + 1);
+}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -19,19 +26,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 	size_t	size;
 
-	slen = ft_strlen(s);
-	if (slen < len)
-		size = slen + 1;
-	else
-		size = len + 1;
+	src = (char *)s;
+	if (!src)
+		return (NULL);
+	slen = ft_strlen(src);
+	if (slen < start)
+		return ((char *)ft_calloc(sizeof(char), 1));
+	size = pretty_func(slen, len);
 	ret_pointer = (char *)ft_calloc(size, sizeof(char));
 	if (!ret_pointer)
 		return (NULL);
-	else if (slen > start)
-	{
-		src = (char *)(s + start);
-		ft_strlcpy(ret_pointer, src, size);
-	}
+	ft_strlcpy(ret_pointer, src + start, size);
 	return (ret_pointer);
 }
 
