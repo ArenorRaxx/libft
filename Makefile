@@ -6,7 +6,7 @@
 #    By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 17:34:58 by brhajji-          #+#    #+#              #
-#    Updated: 2021/11/30 23:28:28 by mcorso           ###   ########.fr        #
+#    Updated: 2021/12/01 15:26:56 by mcorso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,9 +50,11 @@ BONUS = ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
-		ft_lstadd_last.c\
+		ft_lstadd_back.c\
 		ft_lstdelone.c\
 		ft_lstclear.c\
+		ft_lstiter.c\
+		ft_lstmap.c\
 
 OBJS = ${SRCS:.c=.o}
 BONUSOBJ = ${BONUS:.c=.o}
