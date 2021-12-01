@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:15:26 by mcorso            #+#    #+#             */
-/*   Updated: 2021/11/29 15:41:25 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/12/01 17:26:11 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	str2 = (unsigned char *)s2;
 	if (n == 0)
 		return (0);
-	while (--n && *str1 == *str2)
+	while (--n && *str1 == *str2 && *str1)
 	{
 		str1++;
 		str2++;
