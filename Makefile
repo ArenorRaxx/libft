@@ -6,7 +6,7 @@
 #    By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/25 17:34:58 by brhajji-          #+#    #+#              #
-#    Updated: 2021/12/01 17:21:11 by mcorso           ###   ########.fr        #
+#    Updated: 2021/12/01 19:25:33 by mcorso           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,4 +74,4 @@ clean :
 fclean : clean	
 	${RM} ${NAME} 
 re : fclean all
-.PHONY : all clean fclean re
+.PHONY : all bonus clean fclean re
