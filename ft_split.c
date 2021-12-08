@@ -6,68 +6,80 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 22:54:04 by mcorso            #+#    #+#             */
-/*   Updated: 2021/12/01 20:40:38 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/12/08 18:02:29 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	c_word(const char *str, char c)
+static int	nword(const char *src, char c)
 {
-	int	nwords;
-	int	trigger;
+	int	i;
+	int	nword;
 
-	nwords = 0;
-	while (*str)
+	if (!*src)
+		return (0);
+	i = 0;
+	nword = 0;
+	while (src[i] && src[i] == c)
+		i++;
+	while (src[i])
 	{
-		if (*str != c && trigger == 0)
+		if (src[i] == c)
 		{
-			trigger = 1;
-			nwords++;
+			nword++;
+			while (src[i] && src[i] == c)
+				i++;
+			continue ;
 		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
+		i++;
 	}
-	return (nwords);
+	if (src[i - 1] != c)
+		nword++;
+	return (nword);
 }
 
-static char	*word_calc(const char *str, int start, int finish)
+static int	wlen(const char *src, char c)
 {
-	char	*word;
-	int		i;
+	int	len;
 
-	i = 0;
-	word = (char *)ft_calloc(finish - start + 1, sizeof(char));
-	while (start < finish)
-		word[i++] = str[start++];
-	return (word);
+	len = 0;
+	while (src[len] != c)
+		len++;
+	return (len);
+}
+
+static char	**freed(char **src, int index)
+{
+	while (index > 0)
+		free(src[--index]);
+	free(src);
+	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
-	char	**spret;
+	int		i;
+	int		j;
+	int		nwords;
+	char	**strs;
 
 	i = 0;
 	j = 0;
-	index = -1;
-	spret = (char **)malloc((c_word(s, c) + 1) * sizeof(char *));
-	if (!s || !spret)
+	nwords = nword(s, c);
+	strs = (char **)malloc(sizeof(*strs) * (nwords + 1));
+	if (!strs)
 		return (NULL);
-	while (i <= ft_strlen(s))
+	while (i < nwords)
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			spret[j++] = word_calc(s, index, i);
-			index = -1;
-		}
-		i++;
+		while (s[j] == c)
+			j++;
+		strs[i] = (char *)malloc(sizeof(**strs) * (wlen((s + j), c) + 1));
+		if (!strs[i])
+			return (freed(strs, i));
+		ft_strlcpy(*(strs + i++), (s + j), wlen((s + j), c) + 1);
+		j += wlen((s + j), c);
 	}
-	spret[j] = 0;
-	return (spret);
+	strs[i] = NULL;
+	return (strs);
 }
