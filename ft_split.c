@@ -6,7 +6,7 @@
 /*   By: mcorso <mcorso@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 22:54:04 by mcorso            #+#    #+#             */
-/*   Updated: 2021/12/08 18:02:29 by mcorso           ###   ########.fr       */
+/*   Updated: 2021/12/10 12:31:43 by mcorso           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	wlen(const char *src, char c)
 	int	len;
 
 	len = 0;
-	while (src[len] != c)
+	while (src[len] != c && src[len] != '\0')
 		len++;
 	return (len);
 }
@@ -67,14 +67,14 @@ char	**ft_split(const char *s, char c)
 	i = 0;
 	j = 0;
 	nwords = nword(s, c);
-	strs = (char **)malloc(sizeof(*strs) * (nwords + 1));
+	strs = malloc(sizeof(*strs) * (nwords + 1));
 	if (!strs)
 		return (NULL);
 	while (i < nwords)
 	{
 		while (s[j] == c)
 			j++;
-		strs[i] = (char *)malloc(sizeof(**strs) * (wlen((s + j), c) + 1));
+		strs[i] = malloc(sizeof(**strs) * (wlen((s + j), c) + 1));
 		if (!strs[i])
 			return (freed(strs, i));
 		ft_strlcpy(*(strs + i++), (s + j), wlen((s + j), c) + 1);
